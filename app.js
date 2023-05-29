@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 //doing it for passport authorization
 app.use(session({
-  secret: "Our little secret",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -31,7 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 //databse setup
 mongoose.set('strictQuery', true);
-const url ="mongodb+srv://yashpachauriyp:yashpachauriyp@cluster0.836jixb.mongodb.net/?retryWrites=true&w=majority";
+const url =process.env.STRING_URL;
 mongoose.connect(url,{useNewUrlParser:true});
 const postSchema ={
     title: String,
