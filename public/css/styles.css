@@ -1,13 +1,17 @@
 html {
   min-height: 100%;
   position: relative;
+  
 }
-
+body{
+  background-color: #D2E9E9;
+}
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 70px; 
     padding-bottom: 70px;
 }
 .navbar {
+  background-color: #C4DFDF;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
@@ -16,9 +20,18 @@ html {
     font-size: 12px;
     letter-spacing: 5px;
 }
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+.postheader{
+  border-bottom: 1px solid #777;
+  margin-bottom: 5%;
 }
+
+.navbar li a:hover {
+    color: #E3F4F4 !important;
+}
+.nav-link:hover{
+  background-color: #E3F4F4 !important;
+}
+
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -30,11 +43,17 @@ html {
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #1abc9c;
+	background-color: #C4DFDF;
 }
 
 .footer p {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
 	margin-top: 25px;
 	font-size: 12px;
-  color: #fff;
+  color:#777;
 }
+
+
+
+

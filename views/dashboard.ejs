@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Travel Blog</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">Travel Blog</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/contact">CONTACT US</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div>
+    <div style="left:0; margin-top: 5%;padding-top:0; padding-left:2%; width: 20%; float:left; border-right: 1px solid #777;">
+        
+        <ul class="nav flex-column;">
+          <li class="nav-item">
+            <a href="/dashboard" style="font-size: 20px; color: #777; background-color: #E3F4F4 !important;">User: <%= user.name%></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: #777 !important;" href="/dashboard/compose">Compose</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #777 !important;" href="/dashboard/update">Update Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="padding-bottom:4%; color: #777 !important;" href="/dashboard/changepassword">Change Password</a>
+            </li>
+              <a class="btn btn-secondary" href="/logout" style="left: 0;padding-left: 5%; width:100%;color:#777; background-color: #E3F4F4;text-align: left;">Logout</a>
+           
+        </ul>
+    </div>
+    <div style="width: 80%; float:right;">
+      <div class="container" style="margin-top: 5%;display: flex">
+        <div style="flex:40%">
+        <img src="/images/Yash Pachauri.jpeg" alt="Yash Pachauri" style="border-radius: 50%;width: 100%;">
+      </div>
+      <div style="flex:60%;padding-left:5%;color:#777; font-family: 'Helvetica Neue','Helvetica','Arial','sans-serif';letter-spacing: 1px;">
+        <h1 ><%= user.name%></h1>
+        <h3>Full Stack Developer and Coder</h3>
+        <p>I'm currently a final-year B.Tech student pursuing a degree in Electronics and Communication Engineering.The world of technology has always fascinated me, and I've dedicated my time and efforts to becoming a skilled developer and coder.</p>
+         <p> I'm well-versed in various technologies such as Node.js, Javascript, C++, Python and databses.</p>
+        <a href="https://www.instagram.com/yashpachauri_/" ><img src="/images/instagram.png" width="5%" alt="instagram logo"></a>
+        <a href="https://www.linkedin.com/in/yash-pachauri-209332161/"><img src="/images/linkedin.png" width="5%" alt="linkedin logo"></a>
+        <a href="mailto:yashpachauri.yp@gmail.com"><img src="/images/gmail.png" width="5%" alt="gmail logo"></a>
+      </div>
+      </div>
+    </div>
+
+<%- include("partials/footer"); -%>

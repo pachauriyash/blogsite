@@ -1,6 +1,13 @@
 <%- include("partials/header"); -%>
+<div class="postheader">
+  <h1 class="blog-post-title"><%=post.title%></h1>
 
-  <h1><%=title%></h1>
-  <p><%=content%></p>
-
+  <p class="blog-post-meta">
+    <%=post.createdate%>
+    by: <a href="/about"><%=post.author%></a>
+  </p>
+</div>
+  <p>
+  <%-post.content%>
+  </p>
 <%- include("partials/footer"); -%>

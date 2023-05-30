@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Travel Blog</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">Travel Blog</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/contact">CONTACT US</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+
+   <div>
+    <div style="left:0; margin-top: 5%;padding-top:0; padding-left:2%; width: 20%; float:left; border-right: 1px solid #777;">
+      
+      <ul class="nav flex-column;">
+        <li class="nav-item">
+          <a href="/dashboard" style="font-size: 20px; color: #777; background-color: #E3F4F4 !important;">User: <%=name%></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #777 !important;" href="/dashboard/compose">Compose</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color: #777 !important;" href="/dashboard/update">Update Blog</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="padding-bottom:4%;color: #777 !important;"  href="/dashboard/changepassword">Change Password</a>
+          </li>
+          
+          <a class="btn btn-secondary" href="/logout" style="left: 0;padding-left: 5%; width:100%;color:#777; background-color: #E3F4F4;text-align: left;">Logout</a>
+
+         
+        </ul>
+      </div>
+    <div style="width: 80%;margin-top: 5%; float:right;">
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Article Link</th>
+            <th scope="col">Update/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%  posts.forEach(function(post){ %>
+          <tr>
+            <th scope="row"><%=post.id%></th>
+            <td><%=post.title%></td>
+            <td><a href="/posts/<%=post._id%>">Link</a></td>
+            <td>
+              <div style="display: inline;">
+                <a class="btn btn-primary" href="/update/<%=post._id%>">Edit</a>
+              </div>
+              <form action="/delete/<%=post._id%>" method="POST" style="display: inline;">
+                <input type="hidden"  name="postid" value="<%=post._id%>"></input>
+                <button class="btn btn-danger" type="submit" name="button">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+
+    </div>
+<%- include("partials/footer"); -%>
